@@ -24,7 +24,7 @@
                 <h5>Menu Digital:</h5> 
                 <div class="row">
                     <div class="mb-3 col-md-3">
-                        {{QrCode::color(255, 0, 0)->generate('http://localhost:8000/menudigital');}}
+                        {{QrCode::color(255, 0, 0)->generate('https://maktub.diveandcode.com/menudigital');}}
                     </div>
                     <div class="mb-3 col-md-6">
                         <p>QrCode usado para aceder o menu digital</p>
