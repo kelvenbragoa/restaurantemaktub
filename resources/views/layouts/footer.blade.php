@@ -41,7 +41,7 @@
                 <div class="container">
                     <!-- generate function from simple-qr code package -->
               
-                    {{QrCode::color(255, 0, 0)->generate('https://maktub.diveandcode.com/menudigital');}}
+                    {{QrCode::color(255, 0, 0)->generate('https://maktub.diveandcode.com/menu');}}
                   </div>
                 
             </div>
