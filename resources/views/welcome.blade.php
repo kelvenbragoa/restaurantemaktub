@@ -25,7 +25,7 @@
                             <ul>
                                 <li><a href="#0">Hamburguer</a></li>
                                 <li><a href="#0">Pizza</a></li>
-                                <li><a href="#0">Bebidas</a></li>
+                                <li><a href="#0">Acompanhantes</a></li>
                                 <li><a href="#0">Mariscos</a></li>
                             </ul>
                         </div>
