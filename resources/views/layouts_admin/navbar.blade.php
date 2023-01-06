@@ -32,24 +32,56 @@
                 </a>
                 
             </li> --}}
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Locais de Entrega">
-                <a class="nav-link" href="{{route('locals.index')}}">
-                    <i class="fa fa-fw fa-plus-circle"></i>
-                    <span class="nav-link-text">Locais</span>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings1">
+                    <i class="fa fa-fw fa-list"></i>
+                    <span class="nav-link-text">Pedidos delivery</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseMylistings1">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Locais de Entrega">
+                        <a class="nav-link" href="{{route('locals.index')}}">
+                            <i class="fa fa-fw fa-plus-circle"></i>
+                            <span class="nav-link-text">Locais</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos Finalizados">
+                        <a class="nav-link" href="{{URL::to('sells-final-admin')}}">
+                            <i class="fa fa-fw fa-shopping-basket"></i>
+                            <span class="nav-link-text">Pedidos Finalizados</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comentários">
+                        <a class="nav-link" href="{{URL::to('/reviews-admin')}}">
+                            <i class="fa fa-fw fa-star"></i>
+                            <span class="nav-link-text">Comentários</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos Finalizados">
-                <a class="nav-link" href="{{URL::to('sells-final-admin')}}">
-                    <i class="fa fa-fw fa-shopping-basket"></i>
-                    <span class="nav-link-text">Pedidos Finalizados</span>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings">
+                    <i class="fa fa-fw fa-list"></i>
+                    <span class="nav-link-text">Pedidos mesas</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseMylistings">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Locais de Entrega">
+                        <a class="nav-link" href="{{route('tables.index')}}">
+                            <i class="fa fa-fw fa-plus-circle"></i>
+                            <span class="nav-link-text">Mesas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos Finalizados">
+                        <a class="nav-link" href="{{URL::to('sells-final-admin')}}">
+                            <i class="fa fa-fw fa-shopping-basket"></i>
+                            <span class="nav-link-text">Pedidos Finalizados</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comentários">
-                <a class="nav-link" href="{{URL::to('/reviews-admin')}}">
-                    <i class="fa fa-fw fa-star"></i>
-                    <span class="nav-link-text">Comentários</span>
-                </a>
-            </li>
+            
+            
+            
            
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recepcionista">
                 <a class="nav-link" href="{{route('atendants.index')}}">

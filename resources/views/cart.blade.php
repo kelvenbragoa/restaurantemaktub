@@ -173,7 +173,7 @@
                             <li class="total">Total<span id="totaltax"></span></li>
                             
                         </ul>
-                        <a href="#" onclick="event.preventDefault();document.getElementById('cart-form').submit();" class="btn_1 gradient full-width mb_5" id="buttonpagar" style="display: none">Pagar Agora</a>
+                        {{-- <a href="#" onclick="event.preventDefault();document.getElementById('cart-form').submit();" class="btn_1 gradient full-width mb_5" id="buttonpagar" style="display: none">Pagar Agora</a> --}}
                         <div class="text-center"><small>Ou liga <strong>258 842648618</strong></small></div>
                     </div>
                 </div>

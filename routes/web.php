@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
+Route::get('/usermenu', function() {
+
+    return response()->json('Por favor volte a fazer o scan do QrCode', 404);
+    }
+);
+
 Route::get('/',[\App\Http\Controllers\RootController::class,'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('product',[\App\Http\Controllers\RootController::class,'product']);
@@ -25,12 +31,19 @@ Route::get('/category/{category}',[\App\Http\Controllers\RootController::class,'
 Route::get('/search',[\App\Http\Controllers\RootController::class,'search']);
 Route::get('/all-reviews',[\App\Http\Controllers\ReviewsController::class,'index']);
 Route::resource('menu', 'App\Http\Controllers\MenuController');
+Route::resource('menudigital', 'App\Http\Controllers\Menu\MenuDigitalController');
+Route::get('/menudigital/{id}/table',[\App\Http\Controllers\Menu\MenuDigitalController::class,'index']);
+Route::get('/menudigital/{user_id}/user/{table_id}/table/{category_id}/category',[\App\Http\Controllers\Menu\MenuDigitalController::class,'showcategory']);
+Route::post('/usermenu',[\App\Http\Controllers\Menu\MenuDigitalController::class, 'loginusermenu'])->name('usermenu');
+
+
 
 
 Auth::routes();
 // Rota para administrador
 Route::group(['middleware'=>['auth','admin']], function(){
 
+    Route::resource('tables', 'App\Http\Controllers\TableController');
     Route::resource('locals', 'App\Http\Controllers\Local_DeliveriesController');
     Route::resource('atendants', 'App\Http\Controllers\AtendantController');
     Route::resource('categories', 'App\Http\Controllers\CategoriesController');

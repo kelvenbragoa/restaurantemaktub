@@ -62,7 +62,7 @@
                 <li>
                     <div class="dropdown user clearfix">
                         <a href="#" data-toggle="dropdown">
-                            <span>{{auth()->user()->name}}</span><figure><img src="/storage/{{auth()->user()->image}}" alt=""></figure>
+                            Menu
                         </a>
                         <div class="dropdown-menu">
                             <div class="dropdown-menu-content">
@@ -105,30 +105,15 @@
                 </div>
                 <ul>
                     <li class="submenu">
-                        <a href="/">Inicio</a>
+                        <a href="/">Carrinho</a>
                     </li>
                     <!--<li class="submenu">
                         <a href="/home">Home</a>
                     </li>-->
                     <li class="submenu">
-                        <a href="/product" class="show-submenu">Produtos</a>
+                        <a href="/product" class="show-submenu">Minhas Compras</a>
                     </li>
-                    {{-- <li class="submenu">
-                        <a href="{{route('menu.index')}}" class="show-submenu">Menu Digital</a>
-                    </li> --}}
-                    @auth
-                    <li class="submenu">
-                        <a href="{{route('carts.index')}}">Carrinho</a>
-                    </li>
-                    <li class="submenu">
-                        <a href="/myorder">Minhas Compras</a>
-                    </li>
-                    
-                    @else
-                    <li class="submenu">
-                        <a href="{{ route('login') }}" class="show-submenu">Entrar</a>
-                    </li>
-                    @endauth
+                   
                   
                     <!-- MENU NORMAL PRA TELAS DE 1200 PARA LA -->
                     

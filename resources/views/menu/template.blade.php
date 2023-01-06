@@ -48,7 +48,7 @@ p {
 
 <div class="row">
   <div class="column" style="background-color:rgb(240, 240, 240);">
-    <p style="text-align:center;"><img src="http://project.terkelven.tech/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
+    <p style="text-align:center;"><img src="http://maktub.diveandcode.com/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
     <h2>Menu Digital</h2>
     <hr>
     <p>Para acessar o nosso menu digital acesse o link:</p>
@@ -59,7 +59,7 @@ p {
     <p style="text-align:center;"><img src="data:image/png;base64, {!! base64_encode(QrCode::color(255, 0, 0)->format('svg')->size(100)->generate('http://localhost:8000/menudigital')) !!}"></p>
   </div>
   <div class="column" style="background-color:rgb(240, 240, 240);">
-    <p style="text-align:center;"><img src="http://project.terkelven.tech/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
+    <p style="text-align:center;"><img src="http://maktub.diveandcode.com/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
     
     <h2>Menu Digital</h2>
     <hr>
@@ -75,7 +75,7 @@ p {
 
 <div class="row">
     <div class="column" style="background-color:rgb(240, 240, 240);">
-      <p style="text-align:center;"><img src="http://project.terkelven.tech/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
+      <p style="text-align:center;"><img src="http://maktub.diveandcode.com/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
       <h2>Menu Digital</h2>
       <hr>
       <p>Para acessar o nosso menu digital acesse o link:</p>
@@ -86,7 +86,7 @@ p {
       <p style="text-align:center;"><img src="data:image/png;base64, {!! base64_encode(QrCode::color(255, 0, 0)->format('svg')->size(100)->generate('http://localhost:8000/menudigital')) !!}"></p>
     </div>
     <div class="column" style="background-color:rgb(240, 240, 240);">
-      <p style="text-align:center;"><img src="http://project.terkelven.tech/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
+      <p style="text-align:center;"><img src="http://maktub.diveandcode.com/template/img/logo_sticky.png" width="162" height="35" alt="" class="center"></p>
       
       <h2>Menu Digital</h2>
       <hr>

@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,36 +42,35 @@
 			<figure>
 				<a href="/"><img src="{{asset('template/img/logo_sticky.png')}}" width="140" height="35" alt=""></a>
 			</figure>
+
+            <h3 style="text-align: center">Voce está na: {{$table->name}}</h3>
 			
-			<form autocomplete="off" method="POST" action="{{ route('login') }}">
+			<form autocomplete="off" method="POST" action="{{ route('usermenu') }}">
                 @csrf
 				
 				
 				<div class="form-group">
-					<input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" placeholder="Email" required>
+					<input class="form-control @error('mobile') is-invalid @enderror" type="number" name="mobile" id="mobile" placeholder="Telefone(Ex:841234567)" required>
 					<i class="icon_mail_alt"></i>
-                    @error('email')
+                    @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                    @enderror
 				</div>
-               
-               
-				<div class="form-group">
-					<input class="form-control @error('password') is-invalid @enderror" type="password" id="password"  name="password" required  placeholder="Password" required>
-					<i class="icon_lock_alt"></i>
-                    @error('password')
+                <div class="form-group">
+					<input class="form-control @error('name') is-invalid @enderror" type="number" name="name" id="name" placeholder="Nome(Opcional)">
+					<i class="icon_mail_alt"></i>
+                    @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                    @enderror
+                   @enderror
 				</div>
+               <input type="hidden" name="table" value="{{$table->id}}">
 				
 				
 				<button type="submit" class="btn_1 gradient full-width">Entrar</button>
-                <div class="text-center mt-2"><small>Esqueceu a password? <strong><a href="{{ route('password.request') }}">Recuperar</a></strong></small></div>
-				<div class="text-center mt-2"><small>Não tem uma conta? <strong><a href="{{ route('register') }}">Registrar</a></strong></small></div>
 			</form>
 			<div class="copy">© {{date('Y')}} {{env('APP_NAME')}}</div>
 		</aside>

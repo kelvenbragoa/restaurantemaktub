@@ -20,7 +20,7 @@
                 </div>
                 @endif
             </div>
-            <div class="card-body">
+            {{-- <div class="card-body">
                 <h5>Menu Digital:</h5> 
                 <div class="row">
                     <div class="mb-3 col-md-3">
@@ -31,7 +31,7 @@
                         <a href="{{URL::to('/print-template')}}" class="btn btn-primary">Clique aqui para imprimir modelo</a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="card-body">
                 <form method="POST" action="{{ route('settings.update', $settings->id)}}">
                     @csrf
@@ -91,7 +91,7 @@
                        
                         <div class="mb-3 col-md-3">
                             <label class="form-label" for="inputFirstName">NUIT</label>
-                            <input type="text" class="form-control" id="inputFirstName" name="company_nuit"  value="{{$settings->company_nuit}}">
+                                                        <input type="text" class="form-control" id="inputFirstName" name="company_nuit"  value="{{$settings->company_nuit}}">
 
                         </div>
                         

@@ -225,7 +225,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="box_how">
-                            <figure><img src="{{asset('template/img/lazy-placeholder-100-100-white.png')}}" data-src="{{asset('template/img/how_1.png')}}" alt="" width="150" height="167" class="lazy"></figure>
+                            <figure><img src="{{asset('template/img/lazy-placeholder-100-100-white.png')}}" data-src="{{asset('template/img/how_1.svg')}}" alt="" width="150" height="167" class="lazy"></figure>
                             <h3>Encomende já</h3>
                             <p>Encontre tudo que precisa com um clique.</p>
                         </div>
