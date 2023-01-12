@@ -34,8 +34,15 @@ Route::resource('menu', 'App\Http\Controllers\MenuController');
 Route::resource('menudigital', 'App\Http\Controllers\Menu\MenuDigitalController');
 Route::get('/menudigital/{id}/table',[\App\Http\Controllers\Menu\MenuDigitalController::class,'index']);
 Route::get('/menudigital/{user_id}/user/{table_id}/table/{category_id}/category',[\App\Http\Controllers\Menu\MenuDigitalController::class,'showcategory']);
+Route::get('/menudigital/{user_id}/user/{table_id}/table',[\App\Http\Controllers\Menu\MenuDigitalController::class,'allcategory']);
+Route::get('/menudigital/{user_id}/user/{table_id}/table/cart',[\App\Http\Controllers\Menu\MenuDigitalController::class,'cart']);
 Route::post('/usermenu',[\App\Http\Controllers\Menu\MenuDigitalController::class, 'loginusermenu'])->name('usermenu');
+Route::post('/storecart',[\App\Http\Controllers\Menu\MenuDigitalController::class, 'storecart'])->name('storecart');
+Route::delete('/destroycart/{product_id}',[\App\Http\Controllers\Menu\MenuDigitalController::class, 'destroycart'])->name('destroycart');
+Route::get('/menudigital/{user_id}/user/{table_id}/table/allorders',[\App\Http\Controllers\Menu\MenuDigitalController::class,'allorders']);
+Route::post('/sellmenu',[\App\Http\Controllers\Menu\MenuDigitalController::class, 'sellmenu'])->name('sellmenu');
 
+Route::get('/client-invoice-menu/{sell_menu_id}',[\App\Http\Controllers\Menu\MenuDigitalController::class,'clientinvoice']);
 
 
 
@@ -54,9 +61,13 @@ Route::group(['middleware'=>['auth','admin']], function(){
     Route::patch('/review/{review}', [\App\Http\Controllers\ReviewsController::class,'update']);
     Route::resource('settings', 'App\Http\Controllers\SettingsController');
     Route::get('/print-template',[\App\Http\Controllers\MenuController::class,'print']);
+    Route::get('/print-template/{table_id}',[\App\Http\Controllers\MenuController::class,'printtemplate']);
     Route::resource('dishday', 'App\Http\Controllers\DishDayController');
     Route::get('/garbage/products',[\App\Http\Controllers\ProductsController::class,'garbage']);
     Route::put('/recover/products',[\App\Http\Controllers\ProductsController::class,'recover']);
+
+    Route::get('/sells-final-menu-admin',[\App\Http\Controllers\SellsMenuController::class,'indexFinalAdmin']);
+    Route::get('/invoice-menu-admin/{sell}',[\App\Http\Controllers\SellsMenuController::class,'invoiceAdmin']);
 
    
     
@@ -69,6 +80,11 @@ Route::group(['middleware'=>['auth','atendant']], function(){
     Route::get('/invoice/{sell}',[\App\Http\Controllers\SellsController::class,'invoice']);
     Route::get('/sells-final',[\App\Http\Controllers\SellsController::class,'indexFinal']);
     Route::get('/fetch-data', [App\Http\Controllers\SellsController::class, 'fetchdata']);
+
+    Route::resource('sells-menu', 'App\Http\Controllers\SellsMenuController');
+    Route::get('/invoice-menu/{sell}',[\App\Http\Controllers\SellsMenuController::class,'invoice']);
+    Route::get('/sells-menu-final',[\App\Http\Controllers\SellsMenuController::class,'indexFinal']);
+    Route::get('/fetch-menu-data', [App\Http\Controllers\SellsMenuController::class, 'fetchdata']);
     
 });
 

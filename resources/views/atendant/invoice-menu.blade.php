@@ -108,9 +108,9 @@ td{
       <div class="info">
         <h2 style="color: black">Contacto</h2>
         <p> 
-            Endereço : Ponta-Gêa, Rua 132</br>
-            Email   : delivery@gmail.com</br>
-            Telefone   : 258 842648618</br>
+            Endereço : Rua da Manga</br>
+            Email   : maktub@maktub.com</br>
+            Telefone   : 258 84000000</br>
         </p>
       </div>
     </div><!--End Invoice Mid-->

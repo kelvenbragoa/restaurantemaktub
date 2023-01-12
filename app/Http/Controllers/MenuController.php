@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Settings;
+use App\Models\Table;
 use Illuminate\Http\Request;
 use PDF;
 
@@ -35,6 +36,21 @@ class MenuController extends Controller
 
         
     }
+
+    public function printtemplate($table_id){
+        $settings = Settings::find(1);
+        $table = Table::find($table_id);
+
+        PDF::setOptions(['isRemoteEnabled' => true]);
+
+        $pdf = PDF::loadView('menu.template', compact('settings','table'));
+
+        return $pdf->setPaper('a4')->stream('modelo.pdf');
+
+        
+    }
+
+    
 
     /**
      * Show the form for creating a new resource.

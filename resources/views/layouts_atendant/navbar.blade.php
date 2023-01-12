@@ -11,18 +11,50 @@
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders Page">
-                <a class="nav-link" href="{{route('sells.index')}}">
-                    <i class="fa fa-fw fa-shopping-basket"></i>
-                    <span class="nav-link-text">Pedidos Em Curso</span>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings1">
+                    <i class="fa fa-fw fa-list"></i>
+                    <span class="nav-link-text">Pedidos delivery</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseMylistings1">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders Page">
+                        <a class="nav-link" href="{{route('sells.index')}}">
+                            <i class="fa fa-fw fa-shopping-basket"></i>
+                            <span class="nav-link-text">Pedidos Em Curso</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders Page">
+                        <a class="nav-link" href="{{URL::to('sells-final')}}">
+                            <i class="fa fa-fw fa-check"></i>
+                            <span class="nav-link-text">Pedidos Finalizados</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders Page">
-                <a class="nav-link" href="{{URL::to('sells-final')}}">
-                    <i class="fa fa-fw fa-check"></i>
-                    <span class="nav-link-text">Pedidos Finalizados</span>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="My listings">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMylistings">
+                    <i class="fa fa-fw fa-list"></i>
+                    <span class="nav-link-text">Pedidos mesas</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseMylistings">
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Orders Page">
+                        <a class="nav-link" href="{{route('sells-menu.index')}}">
+                            <i class="fa fa-fw fa-shopping-basket"></i>
+                            <span class="nav-link-text">Pedidos Em Curso</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos Finalizados">
+                        <a class="nav-link" href="{{URL::to('sells-menu-final')}}">
+                            <i class="fa fa-fw fa-shopping-basket"></i>
+                            <span class="nav-link-text">Pedidos Finalizados</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
+            
+            
             <!--<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Edit Order">
                 <a class="nav-link" href="{{route('categories.index')}}">
                     <i class="fa fa-fw fa-pencil"></i>

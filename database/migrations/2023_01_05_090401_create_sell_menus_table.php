@@ -16,6 +16,7 @@ class CreateSellMenusTable extends Migration
         Schema::create('sell_menus', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_menu_id');
+            $table->unsignedBigInteger('table_id');
             $table->decimal('total',8,2);
             $table->string('payment');
             $table->string('status');

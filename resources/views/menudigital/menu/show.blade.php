@@ -32,8 +32,15 @@
        
         
 
-       
-        <a href="" class="btn_1 gradient full-width">Clique aqui para ver seu carrinho</a>
+       <div class="row">
+        <div class="col">
+            <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table')}}" class="btn_1 gradient full-width">Voltar as categorias</a> 
+        </div>
+        <div class="col">
+            <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table/cart')}}" class="btn_1 gradient full-width">Clique aqui para ver seu carrinho</a>
+        </div>
+       </div>
+        
         <p>Categoria: {{$category->name}}</p>
         <p>Mesa: {{$table->name}}</p>
        

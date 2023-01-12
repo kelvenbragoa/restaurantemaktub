@@ -9,4 +9,8 @@ class CartMenu extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function product(){
+        return $this->hasOne('App\Models\Product', 'id', 'product_id');
+    }
 }

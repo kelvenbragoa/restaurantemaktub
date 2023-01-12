@@ -59,7 +59,7 @@
                    @enderror
 				</div>
                 <div class="form-group">
-					<input class="form-control @error('name') is-invalid @enderror" type="number" name="name" id="name" placeholder="Nome(Opcional)">
+					<input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" placeholder="Nome(Opcional)">
 					<i class="icon_mail_alt"></i>
                     @error('name')
                                     <span class="invalid-feedback" role="alert">

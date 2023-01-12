@@ -1,4 +1,4 @@
-@extends('layouts_admin.master')
+@extends('layouts_atendant.master')
 @section('content')
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -7,62 +7,64 @@
             <li class="breadcrumb-item">
                 <a href="/home">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Mesas</li>
+            <li class="breadcrumb-item active">Pedidos em Finalizados</li>
         </ol>
         <!-- Example DataTables Card-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> Mesas
-                <div class="text-left">
-                    <a class="btn btn-info" href="{{route('tables.create')}}">Adicionar</a>  
-                </div>
+                <i class="fa fa-table"></i> Pedidos em Finalizados
+                
                 @if (Session::has('message'))
                 <div class="alert alert-success">
                     {{Session::get('message')}}
                 </div>
                 @endif
             </div>
+           
             <div class="card-body">
+                
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Mesa</th>
-                               
+                                <th>ID/REF</th>
+                                <th>Horas</th>
+                                <th>Total</th>
+                                <th>Pagamento</th>
                                 <th>Ações</th>
                                 
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Mesa</th>
-                               
+                                <th>ID/REF</th>
+                                <th>Horas</th>
+                                <th>Total</th>
+                                <th>Pagamento</th>
                                 <th>Ações</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @if ($tables->count() == 0)
+                            @if ($sells->count() == 0)
                                <tr><td>Nenhum item</td> </tr> 
                             @endif
-                            @foreach ($tables as $item)
+                            @foreach ($sells as $item)
                             <tr>
-                                <td>{{$item->name}}</td>
+                                <td>{{$item->id}}</td>
+                                <td>{{$item->created_at->format('H:i:s')}}</td>
+                                <td>{{$item->total}} MT</td>
+                                <td>{{$item->payment}}</td>
                                
                                
-                                <td> 
-                                    <a href="{{URL::to('/tables/'.$item->id.'/edit')}}"><i class="fa fa-edit"></i></a>
-                                    <a href="{{URL::to('/tables/'.$item->id)}}"><i class="fa fa-eye"></i></a>
-                                     <a href="{{URL::to('/print-template/'.$item->id)}}" ><i class="fa fa-file"></i></a>    
-                                </td>
+                                <td> <a href="{{URL::to('/invoice-menu/'.$item->id)}}"><i style="color: black" class="fa fa-file"></i></a></td>
                             </tr>
-                            @include('admin.tables.modaldelete')
                             @endforeach
                            
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="card-footer small text-muted">Ultima atualização {{$last->updated_at ?? ''}}</div>
+            <div class="card-footer small text-muted">Ultima atualização </div>
         </div>
         <!-- /tables-->
     </div>

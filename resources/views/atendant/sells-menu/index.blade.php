@@ -22,7 +22,7 @@
                     <div class="col-lg" style="background: rgb(237, 109, 86)">Pendente(4)</div>
                     <div class="col-lg" style="background: rgb(81, 153, 235)">Confirmado(3)</div>
                     <div class="col-lg" style="background: rgb(230, 250, 116)">Preparando(2)</div>
-                    <div class="col-lg" style="background: rgb(153, 247, 110)">Despachado(1)</div>
+                    <div class="col-lg" style="background: rgb(153, 247, 110)">Pronto(1)</div>
                     
                 </div>
                 
@@ -47,9 +47,9 @@
                         <thead>
                             <tr>
                                 <th>ID/REF</th>
-                                <th>Horas</th>
+                                <th>Horas/Data</th>
                                 <th>Total</th>
-                                <th>Pagamento</th>
+                                <th>Telefone cliente</th>
                                 <th>Estado</th>
                                 <th>Ações</th>
                                 
@@ -58,9 +58,9 @@
                         <tfoot>
                             <tr>
                                 <th>ID/REF</th>
-                                <th>Horas</th>
+                                <th>Horas/Data</th>
                                 <th>Total</th>
-                                <th>Pagamento</th>
+                                <th>Telefone cliente</th>
                                 <th>Estado</th>
                                 <th>Ações</th>
                             </tr>
@@ -78,9 +78,9 @@
                             
                             >
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->created_at->format('H:i:s')}}</td>
+                                <td>{{$item->created_at->format('H:i:s')}} / {{$item->created_at->format('d-m-Y')}}</td>
                                 <td>{{$item->total}} MT</td>
-                                <td>{{$item->payment}}</td>
+                                <td>{{$item->user->mobile}}</td>
                                 <td >
                                     <a href="#" data-toggle="modal" data-target="#exampleModal{{$item->id}}" style="color: black">
                                         @if ($item->status == 4) Pendente  @endif
@@ -90,11 +90,11 @@
                                     </a>
                                 </td>
 
-                                @include('atendant.sells.modalview')
+                                @include('atendant.sells-menu.modalview')
                                 
                                
                                
-                                <td> <a href="{{URL::to('/invoice/'.$item->id)}}"><i style="color: black" class="fa fa-file"></i></a></td>
+                                <td> <a href="{{URL::to('/invoice-menu/'.$item->id)}}"><i style="color: black" class="fa fa-file"></i></a></td>
                             </tr>
                             
                             @endforeach
@@ -112,7 +112,7 @@
 <script type="text/javascript">
     function autoRefreshPage()
     {
-        window.location = "https://maktub.diveandcode.com/sells?total="+{{count($sells)}};
+        window.location = "https://maktub.diveandcode.com/sells-menu?total="+{{count($sells)}};
     }
     setInterval('autoRefreshPage()', {{\App\Models\Settings::find(1)->time * 1000}} );
 </script>

@@ -72,7 +72,7 @@
                         </a>
                     </li>
                     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pedidos Finalizados">
-                        <a class="nav-link" href="{{URL::to('sells-final-admin')}}">
+                        <a class="nav-link" href="{{URL::to('sells-final-menu-admin')}}">
                             <i class="fa fa-fw fa-shopping-basket"></i>
                             <span class="nav-link-text">Pedidos Finalizados</span>
                         </a>

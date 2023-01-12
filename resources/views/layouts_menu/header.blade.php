@@ -47,7 +47,7 @@
     <header class="header black_nav clearfix element_to_stick">
         <div class="container">
             <div id="logo">
-                <a href="/">
+                <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table')}}">
                     <img src="{{asset('template/img/logo_sticky.png')}}" width="162" height="35" alt="">
                 </a>
             </div>
@@ -101,17 +101,17 @@
                     <a href="#0" class="open_close">
                         <i class="icon_close"></i><span>Menu</span>
                     </a>
-                    <a href="/"><img src="{{asset('template/admin_section/img/logo.png')}}" width="162" height="35" alt=""></a>
+                    <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table')}}"><img src="{{asset('template/admin_section/img/logo.png')}}" width="162" height="35" alt=""></a>
                 </div>
                 <ul>
                     <li class="submenu">
-                        <a href="/">Carrinho</a>
+                        <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table/cart')}}">Carrinho</a>
                     </li>
                     <!--<li class="submenu">
                         <a href="/home">Home</a>
                     </li>-->
                     <li class="submenu">
-                        <a href="/product" class="show-submenu">Minhas Compras</a>
+                        <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table/allorders')}}" class="show-submenu">Minhas Compras</a>
                     </li>
                    
                   

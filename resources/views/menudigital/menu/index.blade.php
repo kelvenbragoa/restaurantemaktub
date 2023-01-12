@@ -23,7 +23,7 @@
             <i class="icon-food_icon_delivery"></i>
         </div>
         <!-- /promo -->
-        <a href="" class="btn_1 gradient full-width">Clique aqui para ver seu carrinho</a>
+        <a href="{{URL::to('/menudigital/'.$usermenu->id.'/user/'.$table->id.'/table/cart')}}" class="btn_1 gradient full-width">Clique aqui para ver seu carrinho</a>
         <br>
        
         
